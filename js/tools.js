@@ -16,11 +16,15 @@ tools.testmd5 = () => {
 tools.md5 = (info) => {
     return info ? SparkMD5.hash(info) : ''
 }
+
 //本地保存token
-tools.tokenKey = "huhuiyu_teach_)service_token"
+tools.tokenKey = "huhuiyu_teach_service_token"
 tools.saveToken = (data) => {
+    // console.log("没有保存token之前", tools.tokenKey)
     if (data && data.token) {
-        uni.setStorageSync('tools.tokenKey', 'data.token');
+        // console.log("进入判断")
+        uni.setStorageSync('tools.tokenKey', data.token);
+        // console.log("没有保存token之", tools.tokenKey)
     }
 }
 tools.loadToken = () => {
@@ -54,7 +58,8 @@ tools.ajax = (url, paramrs, cb, method) => {
             token: tools.loadToken()
         },
         success: (resp) => {
-            tools.saveToken(resp.token)
+            tools.saveToken(resp.data)
+            // console.log("chakantoken", resp)
             cb(resp.data)
         },
         fail: (errors) => {

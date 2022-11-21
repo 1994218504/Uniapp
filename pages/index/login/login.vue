@@ -31,10 +31,12 @@
                 // 完成省份城市联动
                 this.user.password = tools.md5(this.user.password)
                 tools.ajax('/user/auth/login', this.user, (data) => {
+                    console.log('查看this', this)
                     uni.showToast({
                         title: data.message,
                         duration: 3000,
                         complete: () => {
+                            return
                             if (data.success) {
                                 uni.navigateTo({
                                     url: "/pages/index/index"
