@@ -18,12 +18,23 @@
         methods: {
             test() {
                 tools.testmd5()
-            }
-        },
-        // 不可以使用vue的声明周期，要用unipp自己
-        onLoad() {
-            this.test()
-        },
+            },
+            // get请求 测试
+            onLoad() {
+                tools.ajax('/', {
+                    echo: "黑暗骑士"
+                }, (data) => {
+                    console.log("get请求结果", data)
+                }, "GET")
+                tools.ajax("/api/amap/weatherInfo", {
+                    city: "430702",
+                    extensions: "all"
+                }, (data) => {
+                    console.log("天气请求结果", data)
+                }, "POST")
+            },
+            // 不可以使用vue的声明周期，要用unipp自己
+        }
     }
 </script>
 
