@@ -23,7 +23,7 @@ tools.saveToken = (data) => {
     // console.log("没有保存token之前", tools.tokenKey)
     if (data && data.token) {
         // console.log("进入判断")
-        uni.setStorageSync('tools.tokenKey', data.token);
+        uni.setStorageSync(tools.tokenKey, data.token);
         // console.log("没有保存token之", tools.tokenKey)
     }
 }
