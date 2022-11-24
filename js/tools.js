@@ -1,10 +1,10 @@
-import SparkMD5 from "spark-md5"
+import sparkMd5 from "spark-md5"
 import qs from "qs"
 
 let tools = {}
 
 tools.testmd5 = () => {
-    console.log((SparkMD5.hash('user-pwd')))
+    console.log((sparkMd5.hash('user-pwd')))
     console.log(qs.stringify({
         info: "刘光辉"
     }))
@@ -14,7 +14,10 @@ tools.testmd5 = () => {
     md5加密
 */
 tools.md5 = (info) => {
-    return info ? SparkMD5.hash(info) : ''
+    if (info && info.trim() != '') {
+        return sparkMd5.hash(info)
+    }
+    return ''
 }
 
 //本地保存token

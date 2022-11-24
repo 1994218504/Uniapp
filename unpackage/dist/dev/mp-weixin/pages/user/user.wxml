@@ -1,0 +1,1 @@
+<view>{{''+isLogin+"\n    "+tbUser+"\n    "+tbUserInfo+"\n    "+userOtherInfo+''}}</view>

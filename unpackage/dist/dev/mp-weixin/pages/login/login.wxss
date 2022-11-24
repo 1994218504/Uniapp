@@ -1,0 +1,15 @@
+
+.tc {
+    text-align: center;
+}
+.div_input {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.div_input input {
+    border: 1px solid #000;
+}
+
