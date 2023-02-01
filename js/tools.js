@@ -1,10 +1,10 @@
 import sparkMd5 from "spark-md5"
 import qs from "qs"
+import logger from "./logger"
 
 let tools = {}
 
 tools.testmd5 = () => {
-    console.log((sparkMd5.hash('user-pwd')))
     console.log(qs.stringify({
         info: "刘光辉"
     }))
